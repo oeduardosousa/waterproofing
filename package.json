@@ -1,0 +1,12 @@
+{
+  "name": "waterproofing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "photos:fetch": "node scripts/fetch-photos.mjs",
+    "photos:build": "node scripts/build-photos.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

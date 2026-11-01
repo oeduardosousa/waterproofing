@@ -1,0 +1,156 @@
+[
+  {
+    "role": "hero-main",
+    "section": "Hero",
+    "slug": "roofer-applying-waterproof-membrane-to-flat-roof-39238328",
+    "maxWidth": 2400,
+    "alt": "Aplicador agachado sobre uma laje escura, desenrolando uma manta asfáltica preta com as mãos enluvadas."
+  },
+  {
+    "role": "hero-alt",
+    "section": "Hero (alternativa)",
+    "slug": "silhouetted-construction-workers-against-sunset-sky-39970082",
+    "maxWidth": 2400,
+    "alt": "Silhuetas de trabalhadores em uma estrutura de obra contra um céu alaranjado de fim de tarde."
+  },
+  {
+    "role": "service-roofs",
+    "section": "Serviços: lajes e coberturas",
+    "slug": "worker-applying-waterproofing-coating-on-roof-38781390",
+    "maxWidth": 1600,
+    "alt": "Aplicador em pé sobre uma laje escura, com mangueiras de maçarico no chão e materiais ao fundo."
+  },
+  {
+    "role": "service-roofs-2",
+    "section": "Serviços: lajes e coberturas",
+    "slug": "roofer-applying-waterproof-roof-membrane-38781389",
+    "maxWidth": 1600,
+    "alt": "Aplicador de manta em pé sobre a laje, segurando os maçaricos, com um botijão de gás vermelho ao lado."
+  },
+  {
+    "role": "service-basement",
+    "section": "Serviços: subsolos",
+    "slug": "an-empty-basement-4092026",
+    "maxWidth": 1600,
+    "alt": "Subsolo vazio com paredes de blocos de concreto e vigas de madeira no teto, visto em perspectiva."
+  },
+  {
+    "role": "service-basement-2",
+    "section": "Serviços: subsolos",
+    "slug": "an-empty-basement-4092030",
+    "maxWidth": 1600,
+    "alt": "Subsolo com piso de concreto, escada de madeira, aquecedor de água e estrutura de madeira aparente."
+  },
+  {
+    "role": "service-tanks",
+    "section": "Serviços: reservatórios",
+    "slug": "aerial-view-of-industrial-water-storage-tanks-32418620",
+    "maxWidth": 1600,
+    "alt": "Vista aérea de um grande reservatório circular de água em uma área aberta."
+  },
+  {
+    "role": "service-facade",
+    "section": "Serviços: fachadas",
+    "slug": "man-painting-building-wall-using-ladder-outdoors-31608473",
+    "maxWidth": 1600,
+    "alt": "Trabalhador em uma escada de madeira pintando com rolo uma parede branca externa."
+  },
+  {
+    "role": "service-facade-2",
+    "section": "Serviços: fachadas",
+    "slug": "a-worker-painting-the-wall-of-a-building-13718311",
+    "maxWidth": 1600,
+    "alt": "Operário sentado em um andaime suspenso, com um balde de tinta ao lado, trabalhando em uma parede cinza."
+  },
+  {
+    "role": "service-parking",
+    "section": "Serviços: estacionamentos",
+    "slug": "a-concrete-parking-deck-5244144",
+    "maxWidth": 1600,
+    "alt": "Rampa curva de concreto em um estacionamento de edifício, com pilares e janelas amplas."
+  },
+  {
+    "role": "service-parking-2",
+    "section": "Serviços: estacionamentos",
+    "slug": "underground-parking-garage-with-fire-extinguisher-36259607",
+    "maxWidth": 1600,
+    "alt": "Garagem subterrânea com piso de concreto, pilares e um extintor de incêndio na parede."
+  },
+  {
+    "role": "process-1",
+    "section": "Processo: 1, inspeção",
+    "slug": "woman-wearing-white-helmet-while-holding-a-tablet-inside-the-house-6474469",
+    "maxWidth": 1600,
+    "alt": "Profissional de capacete branco consultando um tablet dentro de um imóvel em obra."
+  },
+  {
+    "role": "process-2",
+    "section": "Processo: 2, preparo",
+    "slug": "worker-installing-waterproof-membrane-on-roof-39238314",
+    "maxWidth": 1600,
+    "alt": "Close de um aplicador ajoelhado ao lado de um rolo de manta asfáltica sobre a laje."
+  },
+  {
+    "role": "process-3",
+    "section": "Processo: 3, aplicação",
+    "slug": "professional-roofer-applying-torch-down-membrane-38510717",
+    "maxWidth": 1600,
+    "alt": "Chama do maçarico na ponta de um rolo de manta asfáltica sobre a cobertura, com um aplicador ao fundo."
+  },
+  {
+    "role": "process-4",
+    "section": "Processo: 4, acabamento",
+    "slug": "roofer-applying-waterproof-membrane-on-flat-roof-38781400",
+    "maxWidth": 1600,
+    "alt": "Aplicador inclinado sobre a laje, alinhando com as mãos o rolo de manta impermeável."
+  },
+  {
+    "role": "detail-droplets-blue",
+    "section": "Detalhe: gotas",
+    "slug": "water-droplets-on-a-blue-surface-4763995",
+    "maxWidth": 1600,
+    "alt": "Gotas de água em forma de pequenas esferas sobre uma superfície azul impermeável."
+  },
+  {
+    "role": "detail-droplets-dark",
+    "section": "Detalhe: gotas",
+    "slug": "water-droplets-on-black-surface-11988729",
+    "maxWidth": 1600,
+    "alt": "Gotas de água desfocadas sobre uma superfície escura inclinada, refletindo a luz."
+  },
+  {
+    "role": "detail-membrane",
+    "section": "Detalhe: manta",
+    "slug": "waterproof-material-with-raindrops-19442272",
+    "maxWidth": 1600,
+    "alt": "Close de uma membrana cinza com dobras suaves e pequenas gotas de água na superfície."
+  },
+  {
+    "role": "detail-roller",
+    "section": "Detalhe: rolo",
+    "slug": "close-up-photo-of-paint-roller-6474452",
+    "maxWidth": 1600,
+    "alt": "Rolo de pintura cinza apoiado em uma bandeja sobre um piso de concreto, com as pernas de uma pessoa ao fundo."
+  },
+  {
+    "role": "problem-crack",
+    "section": "Problema: fissura",
+    "slug": "a-crack-on-a-wall-12326415",
+    "maxWidth": 1600,
+    "alt": "Fissura fina atravessando uma parede de concreto."
+  },
+  {
+    "role": "problem-damage",
+    "section": "Problema: reboco danificado",
+    "slug": "close-up-of-damaged-wall-10900700",
+    "maxWidth": 1600,
+    "alt": "Parede com reboco desprendido, manchas escuras de umidade e tijolos aparentes."
+  },
+  {
+    "role": "problem-stain",
+    "section": "Problema: manchas",
+    "slug": "close-up-of-a-stained-wall-7506161",
+    "maxWidth": 1600,
+    "alt": "Parede branca com manchas escuras de umidade e mofo escorrendo na vertical."
+  }
+]

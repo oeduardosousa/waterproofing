@@ -1,0 +1,802 @@
+{
+  "hero-main": {
+    "section": "Hero",
+    "alt": "Aplicador agachado sobre uma laje escura, desenrolando uma manta asfáltica preta com as mãos enluvadas.",
+    "sample": true,
+    "path": "/images/hero-main/hero-main",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 2400,
+    "height": 1350,
+    "variants": [
+      {
+        "width": 480,
+        "height": 270
+      },
+      {
+        "width": 800,
+        "height": 450
+      },
+      {
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "width": 2400,
+        "height": 1350
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/roofer-applying-waterproof-membrane-to-flat-roof-39238328/",
+      "license": "Pexels License"
+    }
+  },
+  "hero-alt": {
+    "section": "Hero (alternativa)",
+    "alt": "Silhuetas de trabalhadores em uma estrutura de obra contra um céu alaranjado de fim de tarde.",
+    "sample": true,
+    "path": "/images/hero-alt/hero-alt",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 2400,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 533
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "width": 2400,
+        "height": 1600
+      }
+    ],
+    "credit": {
+      "photographer": "Abhishek Biradar",
+      "photographerUrl": "https://www.pexels.com/@abhishek-biradar-34804961/",
+      "pageUrl": "https://www.pexels.com/photo/silhouetted-construction-workers-against-sunset-sky-39970082/",
+      "license": "Pexels License"
+    }
+  },
+  "service-roofs": {
+    "section": "Serviços: lajes e coberturas",
+    "alt": "Aplicador em pé sobre uma laje escura, com mangueiras de maçarico no chão e materiais ao fundo.",
+    "sample": true,
+    "path": "/images/service-roofs/service-roofs",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2844,
+    "variants": [
+      {
+        "width": 480,
+        "height": 853
+      },
+      {
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "width": 1600,
+        "height": 2844
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/worker-applying-waterproofing-coating-on-roof-38781390/",
+      "license": "Pexels License"
+    }
+  },
+  "service-roofs-2": {
+    "section": "Serviços: lajes e coberturas",
+    "alt": "Aplicador de manta em pé sobre a laje, segurando os maçaricos, com um botijão de gás vermelho ao lado.",
+    "sample": true,
+    "path": "/images/service-roofs-2/service-roofs-2",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2844,
+    "variants": [
+      {
+        "width": 480,
+        "height": 853
+      },
+      {
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "width": 1600,
+        "height": 2844
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/roofer-applying-waterproof-roof-membrane-38781389/",
+      "license": "Pexels License"
+    }
+  },
+  "service-basement": {
+    "section": "Serviços: subsolos",
+    "alt": "Subsolo vazio com paredes de blocos de concreto e vigas de madeira no teto, visto em perspectiva.",
+    "sample": true,
+    "path": "/images/service-basement/service-basement",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 533
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1066
+      }
+    ],
+    "credit": {
+      "photographer": "Curtis Adams",
+      "photographerUrl": "https://www.pexels.com/@curtis-adams-1694007/",
+      "pageUrl": "https://www.pexels.com/photo/an-empty-basement-4092026/",
+      "license": "Pexels License"
+    }
+  },
+  "service-basement-2": {
+    "section": "Serviços: subsolos",
+    "alt": "Subsolo com piso de concreto, escada de madeira, aquecedor de água e estrutura de madeira aparente.",
+    "sample": true,
+    "path": "/images/service-basement-2/service-basement-2",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 533
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1066
+      }
+    ],
+    "credit": {
+      "photographer": "Curtis Adams",
+      "photographerUrl": "https://www.pexels.com/@curtis-adams-1694007/",
+      "pageUrl": "https://www.pexels.com/photo/an-empty-basement-4092030/",
+      "license": "Pexels License"
+    }
+  },
+  "service-tanks": {
+    "section": "Serviços: reservatórios",
+    "alt": "Vista aérea de um grande reservatório circular de água em uma área aberta.",
+    "sample": true,
+    "path": "/images/service-tanks/service-tanks",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2133,
+    "variants": [
+      {
+        "width": 480,
+        "height": 640
+      },
+      {
+        "width": 800,
+        "height": 1067
+      },
+      {
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "width": 1600,
+        "height": 2133
+      }
+    ],
+    "credit": {
+      "photographer": "Marian Florinel Condruz",
+      "photographerUrl": "https://www.pexels.com/@gottapics/",
+      "pageUrl": "https://www.pexels.com/photo/aerial-view-of-industrial-water-storage-tanks-32418620/",
+      "license": "Pexels License"
+    }
+  },
+  "service-facade": {
+    "section": "Serviços: fachadas",
+    "alt": "Trabalhador em uma escada de madeira pintando com rolo uma parede branca externa.",
+    "sample": true,
+    "path": "/images/service-facade/service-facade",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1556,
+    "variants": [
+      {
+        "width": 480,
+        "height": 467
+      },
+      {
+        "width": 800,
+        "height": 778
+      },
+      {
+        "width": 1200,
+        "height": 1167
+      },
+      {
+        "width": 1600,
+        "height": 1556
+      }
+    ],
+    "credit": {
+      "photographer": "Rajesh S Balouria",
+      "photographerUrl": "https://www.pexels.com/@rajesh-s-balouria-1289088/",
+      "pageUrl": "https://www.pexels.com/photo/man-painting-building-wall-using-ladder-outdoors-31608473/",
+      "license": "Pexels License"
+    }
+  },
+  "service-facade-2": {
+    "section": "Serviços: fachadas",
+    "alt": "Operário sentado em um andaime suspenso, com um balde de tinta ao lado, trabalhando em uma parede cinza.",
+    "sample": true,
+    "path": "/images/service-facade-2/service-facade-2",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "width": 480,
+        "height": 720
+      },
+      {
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "width": 1200,
+        "height": 1800
+      },
+      {
+        "width": 1600,
+        "height": 2400
+      }
+    ],
+    "credit": {
+      "photographer": "The Vanity Photography Co.",
+      "photographerUrl": "https://www.pexels.com/@tvpco/",
+      "pageUrl": "https://www.pexels.com/photo/a-worker-painting-the-wall-of-a-building-13718311/",
+      "license": "Pexels License"
+    }
+  },
+  "service-parking": {
+    "section": "Serviços: estacionamentos",
+    "alt": "Rampa curva de concreto em um estacionamento de edifício, com pilares e janelas amplas.",
+    "sample": true,
+    "path": "/images/service-parking/service-parking",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 533
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1066
+      }
+    ],
+    "credit": {
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro/",
+      "pageUrl": "https://www.pexels.com/photo/a-concrete-parking-deck-5244144/",
+      "license": "Pexels License"
+    }
+  },
+  "service-parking-2": {
+    "section": "Serviços: estacionamentos",
+    "alt": "Garagem subterrânea com piso de concreto, pilares e um extintor de incêndio na parede.",
+    "sample": true,
+    "path": "/images/service-parking-2/service-parking-2",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 534
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "credit": {
+      "photographer": "DΛVΞ GΛRCIΛ",
+      "photographerUrl": "https://www.pexels.com/@davegarcia/",
+      "pageUrl": "https://www.pexels.com/photo/underground-parking-garage-with-fire-extinguisher-36259607/",
+      "license": "Pexels License"
+    }
+  },
+  "process-1": {
+    "section": "Processo: 1, inspeção",
+    "alt": "Profissional de capacete branco consultando um tablet dentro de um imóvel em obra.",
+    "sample": true,
+    "path": "/images/process-1/process-1",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 534
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "credit": {
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko/",
+      "pageUrl": "https://www.pexels.com/photo/woman-wearing-white-helmet-while-holding-a-tablet-inside-the-house-6474469/",
+      "license": "Pexels License"
+    }
+  },
+  "process-2": {
+    "section": "Processo: 2, preparo",
+    "alt": "Close de um aplicador ajoelhado ao lado de um rolo de manta asfáltica sobre a laje.",
+    "sample": true,
+    "path": "/images/process-2/process-2",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2844,
+    "variants": [
+      {
+        "width": 480,
+        "height": 853
+      },
+      {
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "width": 1600,
+        "height": 2844
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/worker-installing-waterproof-membrane-on-roof-39238314/",
+      "license": "Pexels License"
+    }
+  },
+  "process-3": {
+    "section": "Processo: 3, aplicação",
+    "alt": "Chama do maçarico na ponta de um rolo de manta asfáltica sobre a cobertura, com um aplicador ao fundo.",
+    "sample": true,
+    "path": "/images/process-3/process-3",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2844,
+    "variants": [
+      {
+        "width": 480,
+        "height": 853
+      },
+      {
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "width": 1600,
+        "height": 2844
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/professional-roofer-applying-torch-down-membrane-38510717/",
+      "license": "Pexels License"
+    }
+  },
+  "process-4": {
+    "section": "Processo: 4, acabamento",
+    "alt": "Aplicador inclinado sobre a laje, alinhando com as mãos o rolo de manta impermeável.",
+    "sample": true,
+    "path": "/images/process-4/process-4",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2844,
+    "variants": [
+      {
+        "width": 480,
+        "height": 853
+      },
+      {
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "width": 1600,
+        "height": 2844
+      }
+    ],
+    "credit": {
+      "photographer": "Bulat843",
+      "photographerUrl": "https://www.pexels.com/@bulat843-1243575272/",
+      "pageUrl": "https://www.pexels.com/photo/roofer-applying-waterproof-membrane-on-flat-roof-38781400/",
+      "license": "Pexels License"
+    }
+  },
+  "detail-droplets-blue": {
+    "section": "Detalhe: gotas",
+    "alt": "Gotas de água em forma de pequenas esferas sobre uma superfície azul impermeável.",
+    "sample": true,
+    "path": "/images/detail-droplets-blue/detail-droplets-blue",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 534
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "credit": {
+      "photographer": "Martin Banov",
+      "photographerUrl": "https://www.pexels.com/@mbanov/",
+      "pageUrl": "https://www.pexels.com/photo/water-droplets-on-a-blue-surface-4763995/",
+      "license": "Pexels License"
+    }
+  },
+  "detail-droplets-dark": {
+    "section": "Detalhe: gotas",
+    "alt": "Gotas de água desfocadas sobre uma superfície escura inclinada, refletindo a luz.",
+    "sample": true,
+    "path": "/images/detail-droplets-dark/detail-droplets-dark",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "width": 480,
+        "height": 720
+      },
+      {
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "width": 1200,
+        "height": 1800
+      },
+      {
+        "width": 1600,
+        "height": 2400
+      }
+    ],
+    "credit": {
+      "photographer": "Connor Scott McManus",
+      "photographerUrl": "https://www.pexels.com/@connorscottmcmanus/",
+      "pageUrl": "https://www.pexels.com/photo/water-droplets-on-black-surface-11988729/",
+      "license": "Pexels License"
+    }
+  },
+  "detail-membrane": {
+    "section": "Detalhe: manta",
+    "alt": "Close de uma membrana cinza com dobras suaves e pequenas gotas de água na superfície.",
+    "sample": true,
+    "path": "/images/detail-membrane/detail-membrane",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2133,
+    "variants": [
+      {
+        "width": 480,
+        "height": 640
+      },
+      {
+        "width": 800,
+        "height": 1067
+      },
+      {
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "width": 1600,
+        "height": 2133
+      }
+    ],
+    "credit": {
+      "photographer": "Avak Ava",
+      "photographerUrl": "https://www.pexels.com/@avak-ava-323521783/",
+      "pageUrl": "https://www.pexels.com/photo/waterproof-material-with-raindrops-19442272/",
+      "license": "Pexels License"
+    }
+  },
+  "detail-roller": {
+    "section": "Detalhe: rolo",
+    "alt": "Rolo de pintura cinza apoiado em uma bandeja sobre um piso de concreto, com as pernas de uma pessoa ao fundo.",
+    "sample": true,
+    "path": "/images/detail-roller/detail-roller",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 534
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "credit": {
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko/",
+      "pageUrl": "https://www.pexels.com/photo/close-up-photo-of-paint-roller-6474452/",
+      "license": "Pexels License"
+    }
+  },
+  "problem-crack": {
+    "section": "Problema: fissura",
+    "alt": "Fissura fina atravessando uma parede de concreto.",
+    "sample": true,
+    "path": "/images/problem-crack/problem-crack",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1067,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320
+      },
+      {
+        "width": 800,
+        "height": 534
+      },
+      {
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "credit": {
+      "photographer": "Emmanuel Correia",
+      "photographerUrl": "https://www.pexels.com/@emmanuelcorreia/",
+      "pageUrl": "https://www.pexels.com/photo/a-crack-on-a-wall-12326415/",
+      "license": "Pexels License"
+    }
+  },
+  "problem-damage": {
+    "section": "Problema: reboco danificado",
+    "alt": "Parede com reboco desprendido, manchas escuras de umidade e tijolos aparentes.",
+    "sample": true,
+    "path": "/images/problem-damage/problem-damage",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 1015,
+    "variants": [
+      {
+        "width": 480,
+        "height": 305
+      },
+      {
+        "width": 800,
+        "height": 508
+      },
+      {
+        "width": 1200,
+        "height": 761
+      },
+      {
+        "width": 1600,
+        "height": 1015
+      }
+    ],
+    "credit": {
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels/",
+      "pageUrl": "https://www.pexels.com/photo/close-up-of-damaged-wall-10900700/",
+      "license": "Pexels License"
+    }
+  },
+  "problem-stain": {
+    "section": "Problema: manchas",
+    "alt": "Parede branca com manchas escuras de umidade e mofo escorrendo na vertical.",
+    "sample": true,
+    "path": "/images/problem-stain/problem-stain",
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "width": 1600,
+    "height": 2400,
+    "variants": [
+      {
+        "width": 480,
+        "height": 720
+      },
+      {
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "width": 1200,
+        "height": 1800
+      },
+      {
+        "width": 1600,
+        "height": 2400
+      }
+    ],
+    "credit": {
+      "photographer": "Eva Bronzini",
+      "photographerUrl": "https://www.pexels.com/@eva-bronzini/",
+      "pageUrl": "https://www.pexels.com/photo/close-up-of-a-stained-wall-7506161/",
+      "license": "Pexels License"
+    }
+  }
+}

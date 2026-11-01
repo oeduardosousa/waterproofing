@@ -1,0 +1,28 @@
+{
+  "_note": "Source metadata read from each Pexels photo page on 2026-11-01. Pexels blocks scripted page requests, so this is recorded here instead of fetched at build time.",
+  "license": "Pexels License (https://www.pexels.com/license/): free for commercial use, no attribution required.",
+  "photos": {
+    "roofer-applying-waterproof-membrane-to-flat-roof-39238328": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-08-28"],
+    "silhouetted-construction-workers-against-sunset-sky-39970082": ["Abhishek Biradar", "https://www.pexels.com/@abhishek-biradar-34804961/", "Canon EOS 80D", "2026-10-04"],
+    "worker-applying-waterproofing-coating-on-roof-38781390": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-07-31"],
+    "roofer-applying-waterproof-roof-membrane-38781389": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-08-03"],
+    "an-empty-basement-4092026": ["Curtis Adams", "https://www.pexels.com/@curtis-adams-1694007/", "NIKON D5600", "2020-09-13"],
+    "an-empty-basement-4092030": ["Curtis Adams", "https://www.pexels.com/@curtis-adams-1694007/", "NIKON D5600", "2020-09-13"],
+    "aerial-view-of-industrial-water-storage-tanks-32418620": ["Marian Florinel Condruz", "https://www.pexels.com/@gottapics/", "Galaxy S25 Ultra", "2025-06-06"],
+    "man-painting-building-wall-using-ladder-outdoors-31608473": ["Rajesh S Balouria", "https://www.pexels.com/@rajesh-s-balouria-1289088/", "ILCE-7M4", "2025-04-14"],
+    "a-worker-painting-the-wall-of-a-building-13718311": ["The Vanity Photography Co.", "https://www.pexels.com/@tvpco/", "Canon EOS 200D", "2022-09-22"],
+    "a-concrete-parking-deck-5244144": ["cottonbro studio", "https://www.pexels.com/@cottonbro/", "X-T4", "2020-10-11"],
+    "underground-parking-garage-with-fire-extinguisher-36259607": ["DΛVΞ GΛRCIΛ", "https://www.pexels.com/@davegarcia/", null, "2026-02-28"],
+    "woman-wearing-white-helmet-while-holding-a-tablet-inside-the-house-6474469": ["Tima Miroshnichenko", "https://www.pexels.com/@tima-miroshnichenko/", "ILCE-7M3", "2021-01-13"],
+    "worker-installing-waterproof-membrane-on-roof-39238314": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-08-28"],
+    "professional-roofer-applying-torch-down-membrane-38510717": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-07-13"],
+    "roofer-applying-waterproof-membrane-on-flat-roof-38781400": ["Bulat843", "https://www.pexels.com/@bulat843-1243575272/", "iPhone 15 Pro Max", "2026-07-31"],
+    "water-droplets-on-a-blue-surface-4763995": ["Martin Banov", "https://www.pexels.com/@mbanov/", "DMC-GH4", "2020-09-28"],
+    "water-droplets-on-black-surface-11988729": ["Connor Scott McManus", "https://www.pexels.com/@connorscottmcmanus/", "ILCE-7M3", "2022-05-02"],
+    "waterproof-material-with-raindrops-19442272": ["Avak Ava", "https://www.pexels.com/@avak-ava-323521783/", "COOLPIX P310", "2023-12-11"],
+    "close-up-photo-of-paint-roller-6474452": ["Tima Miroshnichenko", "https://www.pexels.com/@tima-miroshnichenko/", "ILCE-7M3", "2021-01-13"],
+    "a-crack-on-a-wall-12326415": ["Emmanuel Correia", "https://www.pexels.com/@emmanuelcorreia/", "Canon EOS 5D", "2022-05-31"],
+    "close-up-of-damaged-wall-10900700": ["Magda Ehlers", "https://www.pexels.com/@magda-ehlers-pexels/", "X-T30", "2022-01-19"],
+    "close-up-of-a-stained-wall-7506161": ["Eva Bronzini", "https://www.pexels.com/@eva-bronzini/", "NIKON D3300", "2021-04-14"]
+  }
+}
