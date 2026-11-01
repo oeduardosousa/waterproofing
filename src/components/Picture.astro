@@ -1,0 +1,31 @@
+---
+import photos from '../data/photos.json';
+
+interface Props {
+  name: string;
+  sizes?: string;
+  class?: string;
+  eager?: boolean;
+  alt?: string;
+  sample?: boolean;
+}
+const { name, sizes = '100vw', class: className, eager = false, alt, sample = false } = Astro.props;
+const photo = (photos as Record<string, any>)[name];
+if (!photo) throw new Error(`Unknown photo: ${name}`);
+const srcset = (fmt: string) => photo.variants.map((v: any) => `${photo.path}-${v.width}.${fmt} ${v.width}w`).join(', ');
+const fallback = photo.variants.find((v: any) => v.width >= 800) ?? photo.variants[0];
+---
+<picture class={className}>
+  <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
+  <source type="image/webp" srcset={srcset('webp')} sizes={sizes} />
+  <img
+    src={`${photo.path}-${fallback.width}.webp`}
+    alt={alt ?? photo.alt}
+    width={photo.width}
+    height={photo.height}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : undefined}
+    decoding={eager ? 'sync' : 'async'}
+  />
+  {sample && <span class="sample-tag">Foto de exemplo</span>}
+</picture>

@@ -1,0 +1,252 @@
+---
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import Icon from '../components/Icon.astro';
+import { site, wa } from '../data/site.js';
+
+const links = [
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#processo', label: 'Processo' },
+  { href: '#sinais', label: 'Sinais' },
+  { href: '#faq', label: 'Dúvidas' },
+];
+
+const featured = {
+  n: '01',
+  name: 'Lajes e coberturas',
+  area: 'Telhados planos, lajes e terraços',
+  text: 'Tratamento da área mais exposta à chuva: preparo da base, manta ou sistema adequado e acabamento protegido.',
+  photo: 'service-roofs',
+};
+const others = [
+  { n: '02', name: 'Subsolos', text: 'Paredes e pisos em contato com o solo.', photo: 'service-basement' },
+  { n: '03', name: 'Reservatórios', text: 'Caixas d’água e cisternas, com cuidado redobrado.', photo: 'service-tanks' },
+  { n: '04', name: 'Fachadas', text: 'Paredes externas expostas a chuva e vento.', photo: 'service-facade' },
+  { n: '05', name: 'Estacionamentos', text: 'Rampas e pisos de garagem sujeitos a infiltração.', photo: 'service-parking' },
+];
+
+const steps = [
+  { n: '01', name: 'Inspeção', text: 'Visita e análise do local para entender por onde a água entra, qual é a superfície e o que precisa ser feito.', photo: 'process-1' },
+  { n: '02', name: 'Preparo', text: 'Limpeza, regularização da base e tratamento de trincas antes de qualquer manta ou tinta.', photo: 'process-2' },
+  { n: '03', name: 'Aplicação', text: 'O sistema de impermeabilização é aplicado em etapas, seguindo o que foi definido na inspeção.', photo: 'process-3' },
+  { n: '04', name: 'Acabamento', text: 'Proteção da camada aplicada, conferência final e entrega do serviço com você.', photo: 'process-4' },
+];
+
+const signs = [
+  { name: 'Fissuras', text: 'Aberturas finas em paredes e lajes podem ser o caminho da água.', photo: 'problem-crack' },
+  { name: 'Manchas e mofo', text: 'Manchas escuras que escorrem ou voltam depois de pintadas.', photo: 'problem-stain' },
+  { name: 'Reboco soltando', text: 'Parede que descasca ou esfarela costuma indicar umidade presa.', photo: 'problem-damage' },
+];
+
+const faq = [
+  { q: 'Como funciona o orçamento?', a: 'Você chama no WhatsApp, descreve o problema e, se puder, envia fotos do local. A partir daí combinamos a visita de inspeção. O fluxo final será definido pela empresa.' },
+  { q: 'Quanto custa impermeabilizar?', a: 'Depende da área, do estado da superfície e do sistema indicado. Por isso este site não mostra valores: o orçamento sai depois de entender o seu caso.' },
+  { q: 'Em quais regiões vocês atendem?', a: 'Região de atendimento: a definir (exemplo). Envie sua cidade pelo WhatsApp e confirmamos.' },
+  { q: 'Como saber se preciso impermeabilizar?', a: 'Fissuras, manchas de umidade, mofo, reboco soltando e goteiras são sinais comuns. Na dúvida, uma inspeção mostra o que está acontecendo.' },
+  { q: 'Atendem residências e empresas?', a: 'Sim: casas, condomínios, comércios e indústrias, de acordo com a proposta de cada serviço (texto de exemplo).' },
+];
+
+const word = [...'SECAOBRA'];
+---
+<Base
+  title="Seca Obra | Impermeabilização para obras e imóveis"
+  description="Impermeabilização de lajes, subsolos, reservatórios, fachadas e estacionamentos. Peça seu orçamento pelo WhatsApp. Empresa fictícia, projeto de portfólio."
+>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">
+      {word.map((c, i) => (
+        <Fragment>
+          <span class="loader__mask"><span data-loader-letter>{c}</span></span>
+          {i === 3 && <span class="loader__gap"></span>}
+        </Fragment>
+      ))}
+    </div>
+    <span class="loader__line" data-loader-line></span>
+  </div>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="nav" data-nav>
+    <div class="nav__bar wrap">
+      <a class="logo" href="#topo" aria-label={`${site.name} (${site.nameNote}), início`}>
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4.6 6.1 7.2 9.6 7.2 13.3a7.2 7.2 0 0 1-14.4 0C8.8 13.6 11.4 10.1 16 4z" fill="currentColor"/></svg>
+        <span>{site.name}</span>
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </nav>
+      <a class="btn btn--primary btn--sm nav__cta" href={wa()} target="_blank" rel="noopener">
+        <span>Orçamento</span><Icon name="arrow-right" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-menu-toggle>
+        <span class="nav__toggle-open"><Icon name="menu" /></span>
+        <span class="nav__toggle-close"><Icon name="x" /></span>
+      </button>
+    </div>
+    <div class="nav__progress" aria-hidden="true"><span data-progress></span></div>
+  </header>
+
+  <div class="menu" id="menu" inert data-menu>
+    <nav aria-label="Menu móvel">
+      {links.map((l) => <a href={l.href} data-menu-link>{l.label}</a>)}
+      <a class="btn btn--primary" href={wa()} target="_blank" rel="noopener" data-menu-link><span>Pedir orçamento</span><Icon name="arrow-right" /></a>
+    </nav>
+  </div>
+
+  <main id="conteudo">
+    <section class="hero" id="topo" data-hero>
+      <div class="hero__media" data-hero-media>
+        <Picture name="hero-main" eager sizes="100vw" class="hero__pic" />
+        <div class="hero__scrim" data-hero-scrim></div>
+      </div>
+      <div class="hero__content wrap" data-hero-content>
+        <p class="eyebrow" data-hero-fade>Impermeabilização · empresa fictícia</p>
+        <h1 class="display" data-split data-hero-title>Impermeabilização que mantém sua obra <em>seca</em>.</h1>
+        <p class="lead" data-hero-fade>Lajes, subsolos, reservatórios, fachadas e estacionamentos. Inspeção, aplicação e acabamento em etapas claras.</p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn btn--primary" href={wa()} target="_blank" rel="noopener"><span>Pedir orçamento no WhatsApp</span><Icon name="arrow-right" /></a>
+          <a class="btn btn--ghost-dark" href="#servicos"><span>Ver serviços</span></a>
+        </div>
+      </div>
+      <span class="hero__credit sample-tag" data-hero-fade>Foto de exemplo</span>
+    </section>
+
+    <section class="manifesto section" aria-labelledby="manifesto-t">
+      <div class="wrap manifesto__grid">
+        <div>
+          <p class="eyebrow">Por que importa</p>
+          <h2 id="manifesto-t" class="manifesto__text" data-scrub-words>A água procura o caminho mais fraco. O nosso trabalho é não deixar nenhum.</h2>
+        </div>
+        <figure class="frame manifesto__photo" data-parallax>
+          <Picture name="detail-membrane" sizes="(min-width: 900px) 30vw, 80vw" sample />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos" aria-labelledby="servicos-t">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow" data-reveal>Serviços · exemplo</p>
+          <h2 id="servicos-t" data-split>Cada área da obra, uma <em>solução</em></h2>
+          <p class="lead" data-reveal>Lista de exemplo; os serviços finais serão confirmados pela empresa. Escolha um serviço para pedir orçamento já com o assunto no WhatsApp.</p>
+        </header>
+        <div class="services__grid">
+          <article class="svc svc--feature" data-reveal data-cursor="Orçar">
+            <div class="svc__photo frame" data-parallax><Picture name={featured.photo} sizes="(min-width: 900px) 45vw, 100vw" sample /></div>
+            <div class="svc__body">
+              <span class="svc__n">{featured.n}</span>
+              <p class="tag">{featured.area}</p>
+              <h3>{featured.name}</h3>
+              <p>{featured.text}</p>
+              <a class="svc__link" href={wa(`Olá! Vim pelo site e gostaria de um orçamento de impermeabilização de ${featured.name.toLowerCase()}.`)} target="_blank" rel="noopener"><span>Pedir orçamento</span><Icon name="arrow-up-right" /></a>
+            </div>
+          </article>
+          <ul class="svc-list" role="list">
+            {others.map((s) => (
+              <li class="svc svc--row" data-reveal data-cursor="Orçar">
+                <div class="svc__thumb frame"><Picture name={s.photo} sizes="(min-width: 900px) 160px, 112px" /></div>
+                <div class="svc__body">
+                  <span class="svc__n">{s.n}</span>
+                  <h3><a class="svc__link" href={wa(`Olá! Vim pelo site e gostaria de um orçamento de impermeabilização de ${s.name.toLowerCase()}.`)} target="_blank" rel="noopener">{s.name}<Icon name="arrow-up-right" /></a></h3>
+                  <p>{s.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="processo" aria-labelledby="processo-t" data-process>
+      <div class="process__pin" data-process-pin>
+        <div class="process__photos" data-process-photos aria-hidden="true">
+          {steps.map((s, i) => (
+            <div class="process__photo" data-process-photo={i}>
+              <Picture name={s.photo} sizes="(min-width: 900px) 50vw, 100vw" alt="" sample />
+            </div>
+          ))}
+        </div>
+        <div class="process__body wrap">
+          <header class="head head--dark">
+            <p class="eyebrow">Processo · etapas de exemplo</p>
+            <h2 id="processo-t" data-split>Do diagnóstico à obra <em>entregue</em></h2>
+          </header>
+          <ol class="steps" role="list">
+            {steps.map((s, i) => (
+              <li class="step" data-step={i}>
+                <div class="step__photo frame"><Picture name={s.photo} sizes="100vw" alt="" sample /></div>
+                <span class="step__n">{s.n}</span>
+                <div>
+                  <h3>{s.name}</h3>
+                  <p>{s.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div class="rail" aria-hidden="true"><span data-rail></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section signs" id="sinais" aria-labelledby="sinais-t">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow" data-reveal>Sinais de alerta</p>
+          <h2 id="sinais-t" data-split>A umidade avisa <em>antes</em></h2>
+          <p class="lead" data-reveal>Reconheceu algum destes sinais? Envie uma foto pelo WhatsApp e conte onde fica.</p>
+        </header>
+        <ul class="signs__grid" role="list">
+          {signs.map((s) => (
+            <li class="sign" data-reveal>
+              <div class="frame"><Picture name={s.photo} sizes="(min-width: 900px) 30vw, 100vw" sample /></div>
+              <h3>{s.name}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))}
+        </ul>
+        <a class="btn btn--primary signs__cta" data-reveal href={wa('Olá! Vim pelo site e vou enviar fotos de um problema de umidade no meu imóvel.')} target="_blank" rel="noopener"><span>Enviar fotos pelo WhatsApp</span><Icon name="arrow-right" /></a>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-t">
+      <div class="wrap faq__grid">
+        <header class="head">
+          <p class="eyebrow" data-reveal>Dúvidas · respostas de exemplo</p>
+          <h2 id="faq-t" data-split>Perguntas <em>frequentes</em></h2>
+        </header>
+        <div class="faq__list" data-reveal>
+          {faq.map((f) => (
+            <details>
+              <summary><span>{f.q}</span><Icon name="plus" /></summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" aria-labelledby="contato-t" data-contact>
+      <div class="contact__media" aria-hidden="true"><Picture name="detail-droplets-dark" alt="" sizes="100vw" /></div>
+      <div class="wrap contact__inner">
+        <p class="eyebrow">Contato</p>
+        <h2 id="contato-t" class="display" data-split>Conte o que está acontecendo. Respondemos no <em>WhatsApp</em>.</h2>
+        <a class="btn btn--primary btn--lg" href={wa()} target="_blank" rel="noopener"><span>Pedir orçamento</span><Icon name="arrow-right" /></a>
+        <p class="contact__number">{site.whatsappDisplay} <span class="tag tag--dark">número de exemplo</span></p>
+        <ul class="socials" role="list" aria-label="Redes sociais (links de exemplo)">
+          {site.socials.map((s) => (<li><a href={s.href} target="_blank" rel="noopener">{s.label}<Icon name="arrow-up-right" /></a></li>))}
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__word" aria-hidden="true">{site.name}</p>
+      <p class="footer__note">{site.name} é uma empresa fictícia: projeto de portfólio. Nome, número de WhatsApp, redes sociais, serviços e textos são exemplos. Fotos reais de banco de imagens (Pexels), marcadas como exemplo.</p>
+    </div>
+  </footer>
+
+  <a class="fab" href={wa()} target="_blank" rel="noopener" aria-label="Pedir orçamento no WhatsApp" data-fab>
+    <Icon name="message" />
+  </a>
+</Base>

@@ -1,0 +1,16 @@
+---
+import arrowRight from 'lucide-static/icons/arrow-right.svg?raw';
+import arrowUpRight from 'lucide-static/icons/arrow-up-right.svg?raw';
+import plus from 'lucide-static/icons/plus.svg?raw';
+import menu from 'lucide-static/icons/menu.svg?raw';
+import x from 'lucide-static/icons/x.svg?raw';
+import message from 'lucide-static/icons/message-circle.svg?raw';
+
+const icons: Record<string, string> = { 'arrow-right': arrowRight, 'arrow-up-right': arrowUpRight, plus, menu, x, message };
+const { name } = Astro.props;
+const svg = (icons[name] ?? '')
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace('<svg', '<svg aria-hidden="true" focusable="false" class="icon"')
+  .replace(/\s(width|height)="[^"]*"/g, '');
+---
+<Fragment set:html={svg} />
