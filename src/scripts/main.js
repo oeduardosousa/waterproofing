@@ -276,8 +276,59 @@ function setupMotion() {
   return mm;
 }
 
+/* FAQ accordion: animates the native <details>. Height is the one layout property animated here
+   (content must push the page); the answer also fades and rises. Interruptible: reversing mid-way
+   continues from the current height. */
+function setupFaq() {
+  const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  $$('.faq details').forEach((d) => {
+    const summary = $('summary', d);
+    const answer = $('p', d);
+    let anim = null;
+    let answerAnim = null;
+
+    const run = (opening) => {
+      const from = d.offsetHeight;
+      anim?.cancel();
+      answerAnim?.cancel();
+      d.open = true;
+      d.style.overflow = 'hidden';
+      const closedH = summary.offsetHeight;
+      const to = opening ? d.scrollHeight : closedH;
+      d.classList.toggle('is-open', opening);
+      anim = d.animate(
+        { height: [`${from}px`, `${to}px`] },
+        { duration: opening ? 320 : 220, easing: ease },
+      );
+      answerAnim = answer.animate(
+        opening
+          ? [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'none' }]
+          : [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-4px)' }],
+        { duration: opening ? 260 : 140, delay: opening ? 60 : 0, easing: ease, fill: 'both' },
+      );
+      anim.onfinish = () => {
+        d.open = opening;
+        d.style.overflow = '';
+        anim = answerAnim = null;
+        answer.getAnimations().forEach((a) => a.cancel());
+        ScrollTrigger.refresh();
+      };
+      anim.oncancel = () => { d.style.overflow = ''; };
+    };
+
+    summary.addEventListener('click', (e) => {
+      if (reduced.matches) return;
+      e.preventDefault();
+      const opening = anim ? !d.classList.contains('is-open') : !d.open;
+      run(opening);
+    });
+  });
+}
+
 async function init() {
   setupNav();
+  setupFaq();
   const reduce = root.classList.contains('rm');
   const h1 = $('[data-hero-title]');
   if (!reduce) {
