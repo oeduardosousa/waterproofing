@@ -224,21 +224,21 @@ body.menu-open { overflow: hidden; }
   .steps { grid-template-columns: 1fr 1fr; }
 }
 .process--pinned { padding-block: 0; }
-.process--pinned .process__pin { position: relative; height: 100vh; height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
-.process--pinned .process__photos { display: block; position: relative; }
+.process--pinned .process__pin { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+.process--pinned .process__photos { display: block; position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; }
 .process--pinned .process__photo { position: absolute; inset: 0; }
 .process--pinned .process__photo picture, .process--pinned .process__photo img { width: 100%; height: 100%; object-fit: cover; }
 .process--pinned .process__photo:not(:first-child) { clip-path: inset(100% 0 0 0); }
-.process--pinned .process__body { display: flex; flex-direction: column; justify-content: center; gap: var(--space-7); padding-inline: var(--space-8); position: relative; max-width: none; margin: 0; }
+.process--pinned .process__body { display: flex; flex-direction: column; gap: var(--space-8); padding-block: var(--space-9) 20vh; padding-inline: var(--space-8); position: relative; max-width: none; margin: 0; }
 .process--pinned .head { margin-bottom: 0; }
-.process--pinned .steps { grid-template-columns: 1fr; gap: var(--space-5); }
-.process--pinned .step { grid-template-columns: 4rem 1fr; align-items: baseline; padding-top: var(--space-4); opacity: 0.35; transition: opacity 600ms ease, transform 800ms var(--ease-out); }
+.process--pinned .steps { grid-template-columns: 1fr; gap: 0; }
+.process--pinned .step { grid-template-columns: 4rem 1fr; align-content: center; align-items: baseline; min-height: 48vh; padding-top: var(--space-4); opacity: 0.35; transition: opacity 600ms ease, transform 800ms var(--ease-out); }
 .process--pinned .step.is-active { opacity: 1; transform: translateX(14px); }
 .process--pinned .step__photo { display: none; }
 .process--pinned .step__n { font-size: var(--text-h2); }
 /* Height and opacity of the description are driven by GSAP (see setupMotion) so it can ease open and closed. */
 .process--pinned .step p { margin-top: var(--space-1); height: 0; overflow: hidden; opacity: 0; }
-.process--pinned .rail { display: block; position: absolute; right: var(--space-5); top: 18%; bottom: 18%; width: 2px; background: var(--ink-700); }
+.process--pinned .rail { display: block; position: absolute; right: var(--space-5); top: 0; bottom: 0; width: 2px; background: var(--ink-700); }
 .process--pinned .rail span { display: block; width: 100%; height: 100%; background: var(--amber-500); transform: scaleY(0); transform-origin: top; }
 
 /* Signs */

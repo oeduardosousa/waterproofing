@@ -193,7 +193,8 @@ function setupMotion() {
       gsap.fromTo(words, { opacity: 0.18 }, { opacity: 1, stagger: 0.1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: true } });
     });
 
-    // Pinned process: desktop and tall viewports only; stacked cards elsewhere.
+    // Process stage: desktop and tall viewports only; stacked cards elsewhere. Nothing is pinned, so the
+    // page always scrolls normally. The photo column is sticky and follows the step passing the middle.
     const pin = gsap.matchMedia();
     pin.add('(min-width: 900px) and (min-height: 620px)', () => {
       const section = $('[data-process]');
@@ -203,33 +204,33 @@ function setupMotion() {
       const texts = steps.map((s) => $('p', s));
       const imgs = photos.map((p) => $('img', p));
       let active = -1;
-      // Text opens and closes with eased tweens; photos are tied to scroll position (below) so a fast
-      // scroll can never jump past a step without it being shown.
       const setActive = (i, instant = false) => {
         if (i === active) return;
+        const prev = active;
         active = i;
+        const d = (v) => (instant ? 0 : v);
         steps.forEach((s, n) => s.classList.toggle('is-active', n === i));
         texts.forEach((t, n) => {
           const on = n === i;
-          gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: instant ? 0 : on ? 0.7 : 0.35, delay: instant ? 0 : on ? 0.12 : 0, ease: 'power3.out', overwrite: 'auto' });
+          gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: d(on ? 0.7 : 0.35), delay: d(on ? 0.12 : 0), ease: 'power3.out', overwrite: 'auto' });
         });
+        photos.forEach((p, n) => {
+          if (n === 0) return;
+          const shown = n <= i;
+          gsap.to(p, { clipPath: shown ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)', duration: d(shown ? 1.1 : 0.8), ease: 'power3.inOut', overwrite: 'auto' });
+        });
+        if (prev !== -1 && i > prev) {
+          gsap.fromTo(imgs[i], { scale: 1.2, yPercent: 5 }, { scale: 1, yPercent: 0, duration: d(1.6), ease: 'expo.out', overwrite: 'auto' });
+          gsap.to(imgs[prev], { yPercent: -4, duration: d(1.1), ease: 'power2.out', overwrite: 'auto' });
+        } else if (prev !== -1) {
+          gsap.fromTo(imgs[i], { yPercent: -4 }, { yPercent: 0, duration: d(1.1), ease: 'power2.out', overwrite: 'auto' });
+        }
       };
       setActive(0, true);
-      const n = steps.length;
-      const tl = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: section, start: 'top top', end: '+=400%', pin: true, scrub: 1, anticipatePin: 1,
-          onUpdate: (self) => setActive(Math.min(n - 1, Math.floor(self.progress * n))),
-        },
+      steps.forEach((s, i) => {
+        ScrollTrigger.create({ trigger: s, start: 'top 60%', end: 'bottom 60%', onToggle: (self) => { if (self.isActive) setActive(i); }, onLeave: () => setActive(Math.min(i + 1, steps.length - 1)), onLeaveBack: () => setActive(Math.max(i - 1, 0)) });
       });
-      tl.to('[data-rail]', { scaleY: 1, duration: n }, 0);
-      photos.forEach((p, i) => {
-        if (i === 0) return;
-        tl.fromTo(p, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 0.8, ease: 'power2.inOut' }, i - 0.4);
-        tl.fromTo(imgs[i], { scale: 1.18, yPercent: 5 }, { scale: 1, yPercent: 0, duration: 1, ease: 'power2.out' }, i - 0.4);
-        tl.to(imgs[i - 1], { yPercent: -4, duration: 1, ease: 'power1.out' }, i - 0.4);
-      });
+      gsap.to('[data-rail]', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: $('.process__body', section), start: 'top 60%', end: 'bottom 60%', scrub: 0.6 } });
       return () => {
         section.classList.remove('process--pinned');
         gsap.killTweensOf([...photos, ...imgs, ...texts]);
