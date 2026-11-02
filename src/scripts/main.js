@@ -214,23 +214,24 @@ function setupMotion() {
           const on = n === i;
           gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: d(on ? 0.7 : 0.35), delay: d(on ? 0.12 : 0), ease: 'power3.out', overwrite: 'auto' });
         });
-        photos.forEach((p, n) => {
-          if (n === 0) return;
-          const shown = n <= i;
-          gsap.to(p, { clipPath: shown ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)', duration: d(shown ? 1.1 : 0.8), ease: 'power3.inOut', overwrite: 'auto' });
-        });
-        if (prev !== -1 && i > prev) {
-          gsap.fromTo(imgs[i], { scale: 1.2, yPercent: 5 }, { scale: 1, yPercent: 0, duration: d(1.6), ease: 'expo.out', overwrite: 'auto' });
-          gsap.to(imgs[prev], { yPercent: -4, duration: d(1.1), ease: 'power2.out', overwrite: 'auto' });
-        } else if (prev !== -1) {
-          gsap.fromTo(imgs[i], { yPercent: -4 }, { yPercent: 0, duration: d(1.1), ease: 'power2.out', overwrite: 'auto' });
-        }
       };
       setActive(0, true);
       steps.forEach((s, i) => {
         ScrollTrigger.create({ trigger: s, start: 'top 60%', end: 'bottom 60%', onToggle: (self) => { if (self.isActive) setActive(i); }, onLeave: () => setActive(Math.min(i + 1, steps.length - 1)), onLeaveBack: () => setActive(Math.max(i - 1, 0)) });
       });
       gsap.to('[data-rail]', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: $('.process__body', section), start: 'top 60%', end: 'bottom 60%', scrub: 0.6 } });
+      // Photos follow scroll position almost linearly (light smoothing only), so none can be skipped.
+      const n = steps.length;
+      const tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: { trigger: $('.steps', section), start: 'top 60%', end: 'bottom 60%', scrub: 0.4 },
+      });
+      tl.set({}, {}, n);
+      photos.forEach((p, i) => {
+        if (i === 0) return;
+        tl.fromTo(p, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 0.7 }, i - 0.35);
+        tl.fromTo(imgs[i], { scale: 1.12 }, { scale: 1, duration: 0.7 }, i - 0.35);
+      });
       return () => {
         section.classList.remove('process--pinned');
         gsap.killTweensOf([...photos, ...imgs, ...texts]);
