@@ -201,27 +201,49 @@ function setupMotion() {
       section.classList.add('process--pinned');
       const photos = $$('[data-process-photo]');
       const steps = $$('[data-step]');
+      const texts = steps.map((s) => $('p', s));
+      const imgs = photos.map((p) => $('img', p));
       let active = -1;
-      const setActive = (i) => {
+      // Steps are time-based, eased tweens (not scrubbed): a scroll tick starts a gentle transition
+      // that finishes on its own, so the stage keeps moving even when the scroll stops.
+      const setActive = (i, instant = false) => {
         if (i === active) return;
+        const prev = active;
         active = i;
+        const d = (v) => (instant ? 0 : v);
         steps.forEach((s, n) => s.classList.toggle('is-active', n === i));
+        texts.forEach((t, n) => {
+          const on = n === i;
+          gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: d(on ? 0.7 : 0.35), delay: d(on ? 0.12 : 0), ease: 'power3.out', overwrite: 'auto' });
+        });
+        photos.forEach((p, n) => {
+          if (n === 0) return;
+          const shown = n <= i;
+          gsap.to(p, { clipPath: shown ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)', duration: d(shown ? 1.15 : 0.9), ease: 'power3.inOut', overwrite: 'auto' });
+        });
+        if (prev !== -1 && i > prev) {
+          // New photo settles from a slight zoom while the previous one drifts up behind it.
+          gsap.fromTo(imgs[i], { scale: 1.22, yPercent: 6 }, { scale: 1, yPercent: 0, duration: d(1.8), ease: 'expo.out', overwrite: 'auto' });
+          gsap.to(imgs[prev], { yPercent: -4, duration: d(1.2), ease: 'power2.out', overwrite: 'auto' });
+        } else if (prev !== -1) {
+          gsap.fromTo(imgs[i], { yPercent: -4 }, { yPercent: 0, duration: d(1.2), ease: 'power2.out', overwrite: 'auto' });
+        }
       };
-      setActive(0);
+      setActive(0, true);
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
         scrollTrigger: {
-          trigger: section, start: 'top top', end: '+=300%', pin: true, scrub: 0.6, anticipatePin: 1,
+          trigger: section, start: 'top top', end: '+=300%', pin: true, scrub: 1.2, anticipatePin: 1,
           onUpdate: (self) => setActive(Math.min(steps.length - 1, Math.floor(self.progress * steps.length))),
         },
       });
       tl.to('[data-rail]', { scaleY: 1, duration: steps.length }, 0);
-      photos.forEach((p, i) => {
-        if (i === 0) return;
-        tl.fromTo(p, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 0.7 }, i - 0.35);
-        tl.fromTo($('img', p), { scale: 1.15 }, { scale: 1, duration: 0.7 }, i - 0.35);
-      });
-      return () => section.classList.remove('process--pinned');
+      return () => {
+        section.classList.remove('process--pinned');
+        gsap.killTweensOf([...photos, ...imgs, ...texts]);
+        gsap.set([...photos, ...imgs, ...texts], { clearProps: 'all' });
+        steps.forEach((s) => s.classList.remove('is-active'));
+      };
     });
 
     // Parallax: desktop only
