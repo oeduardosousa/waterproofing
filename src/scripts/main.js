@@ -220,8 +220,6 @@ function setupMotion() {
         defaults: { ease: 'none' },
         scrollTrigger: {
           trigger: section, start: 'top top', end: '+=400%', pin: true, scrub: 1, anticipatePin: 1,
-          // Rest on the middle of each step (and the pin's end) so every step gets its moment.
-          snap: { snapTo: [...Array.from({ length: n }, (_, k) => (k + 0.5) / n), 1], directional: true, duration: { min: 0.3, max: 0.9 }, delay: 0.08, ease: 'power2.inOut' },
           onUpdate: (self) => setActive(Math.min(n - 1, Math.floor(self.progress * n))),
         },
       });
