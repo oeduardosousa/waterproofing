@@ -8,8 +8,8 @@ Este é um projeto de portfólio de uma empresa fictícia. Toda foto aparece no 
 
 | Papel no site | Seção | Fotógrafo(a) | Fonte |
 |---|---|---|---|
-| `hero-main` | Hero | [Bulat843](https://www.pexels.com/@bulat843-1243575272/) | [Pexels](https://www.pexels.com/photo/roofer-applying-waterproof-membrane-to-flat-roof-39238328/) |
-| `hero-alt` | Hero (alternativa) | [Abhishek Biradar](https://www.pexels.com/@abhishek-biradar-34804961/) | [Pexels](https://www.pexels.com/photo/silhouetted-construction-workers-against-sunset-sky-39970082/) |
+| `hero-main` | Não usada (marca visível na manta) | [Bulat843](https://www.pexels.com/@bulat843-1243575272/) | [Pexels](https://www.pexels.com/photo/roofer-applying-waterproof-membrane-to-flat-roof-39238328/) |
+| `hero-alt` | Hero | [Abhishek Biradar](https://www.pexels.com/@abhishek-biradar-34804961/) | [Pexels](https://www.pexels.com/photo/silhouetted-construction-workers-against-sunset-sky-39970082/) |
 | `service-roofs` | Serviços: lajes e coberturas | [Bulat843](https://www.pexels.com/@bulat843-1243575272/) | [Pexels](https://www.pexels.com/photo/worker-applying-waterproofing-coating-on-roof-38781390/) |
 | `service-roofs-2` | Serviços: lajes e coberturas | [Bulat843](https://www.pexels.com/@bulat843-1243575272/) | [Pexels](https://www.pexels.com/photo/roofer-applying-waterproof-roof-membrane-38781389/) |
 | `service-basement` | Serviços: subsolos | [Curtis Adams](https://www.pexels.com/@curtis-adams-1694007/) | [Pexels](https://www.pexels.com/photo/an-empty-basement-4092026/) |

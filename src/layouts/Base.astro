@@ -7,6 +7,9 @@ import '../styles/global.css';
 
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
+// `site` in astro.config.mjs is unset until the deploy URL exists; absolute URLs are emitted only once it is.
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const ogImage = Astro.site ? new URL('/og.jpg', Astro.site).href : undefined;
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -16,8 +19,19 @@ const { title, description } = Astro.props;
     <meta name="theme-color" content="#0B1F33" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:width" content="1200" />}
+    {ogImage && <meta property="og:image:height" content="630" />}
+    {ogImage && <meta property="og:image:alt" content="Silhuetas de trabalhadores em uma estrutura de obra contra um céu alaranjado de fim de tarde." />}
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" type="image/avif" href="/images/hero-main/hero-main-1600.avif" imagesrcset="/images/hero-main/hero-main-800.avif 800w, /images/hero-main/hero-main-1200.avif 1200w, /images/hero-main/hero-main-1600.avif 1600w, /images/hero-main/hero-main-2400.avif 2400w" imagesizes="100vw" />
+    <link rel="preload" as="image" type="image/avif" href="/images/hero-alt/hero-alt-1600.avif" imagesrcset="/images/hero-alt/hero-alt-800.avif 800w, /images/hero-alt/hero-alt-1200.avif 1200w, /images/hero-alt/hero-alt-1600.avif 1600w, /images/hero-alt/hero-alt-2400.avif 2400w" imagesizes="100vw" />
     <script is:inline>
       (function () {
         var root = document.documentElement;
