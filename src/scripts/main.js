@@ -187,7 +187,6 @@ function setupMotion() {
     gsap.to(veil, { opacity: 0.65, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     gsap.to('[data-hero-content]', { yPercent: -14, opacity: 0.2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true } });
 
-    gsap.to('[data-progress]', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom bottom', scrub: true } });
 
     $$('[data-scrub-words]').forEach((el) => {
       const words = splitWords(el);
@@ -204,40 +203,35 @@ function setupMotion() {
       const texts = steps.map((s) => $('p', s));
       const imgs = photos.map((p) => $('img', p));
       let active = -1;
-      // Steps are time-based, eased tweens (not scrubbed): a scroll tick starts a gentle transition
-      // that finishes on its own, so the stage keeps moving even when the scroll stops.
+      // Text opens and closes with eased tweens; photos are tied to scroll position (below) so a fast
+      // scroll can never jump past a step without it being shown.
       const setActive = (i, instant = false) => {
         if (i === active) return;
-        const prev = active;
         active = i;
-        const d = (v) => (instant ? 0 : v);
         steps.forEach((s, n) => s.classList.toggle('is-active', n === i));
         texts.forEach((t, n) => {
           const on = n === i;
-          gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: d(on ? 0.7 : 0.35), delay: d(on ? 0.12 : 0), ease: 'power3.out', overwrite: 'auto' });
+          gsap.to(t, { height: on ? 'auto' : 0, opacity: on ? 1 : 0, y: on ? 0 : -6, duration: instant ? 0 : on ? 0.7 : 0.35, delay: instant ? 0 : on ? 0.12 : 0, ease: 'power3.out', overwrite: 'auto' });
         });
-        photos.forEach((p, n) => {
-          if (n === 0) return;
-          const shown = n <= i;
-          gsap.to(p, { clipPath: shown ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)', duration: d(shown ? 1.15 : 0.9), ease: 'power3.inOut', overwrite: 'auto' });
-        });
-        if (prev !== -1 && i > prev) {
-          // New photo settles from a slight zoom while the previous one drifts up behind it.
-          gsap.fromTo(imgs[i], { scale: 1.22, yPercent: 6 }, { scale: 1, yPercent: 0, duration: d(1.8), ease: 'expo.out', overwrite: 'auto' });
-          gsap.to(imgs[prev], { yPercent: -4, duration: d(1.2), ease: 'power2.out', overwrite: 'auto' });
-        } else if (prev !== -1) {
-          gsap.fromTo(imgs[i], { yPercent: -4 }, { yPercent: 0, duration: d(1.2), ease: 'power2.out', overwrite: 'auto' });
-        }
       };
       setActive(0, true);
+      const n = steps.length;
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
         scrollTrigger: {
-          trigger: section, start: 'top top', end: '+=300%', pin: true, scrub: 1.2, anticipatePin: 1,
-          onUpdate: (self) => setActive(Math.min(steps.length - 1, Math.floor(self.progress * steps.length))),
+          trigger: section, start: 'top top', end: '+=400%', pin: true, scrub: 1, anticipatePin: 1,
+          // Rest on the middle of each step (and the pin's end) so every step gets its moment.
+          snap: { snapTo: [...Array.from({ length: n }, (_, k) => (k + 0.5) / n), 1], directional: true, duration: { min: 0.3, max: 0.9 }, delay: 0.08, ease: 'power2.inOut' },
+          onUpdate: (self) => setActive(Math.min(n - 1, Math.floor(self.progress * n))),
         },
       });
-      tl.to('[data-rail]', { scaleY: 1, duration: steps.length }, 0);
+      tl.to('[data-rail]', { scaleY: 1, duration: n }, 0);
+      photos.forEach((p, i) => {
+        if (i === 0) return;
+        tl.fromTo(p, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 0.8, ease: 'power2.inOut' }, i - 0.4);
+        tl.fromTo(imgs[i], { scale: 1.18, yPercent: 5 }, { scale: 1, yPercent: 0, duration: 1, ease: 'power2.out' }, i - 0.4);
+        tl.to(imgs[i - 1], { yPercent: -4, duration: 1, ease: 'power1.out' }, i - 0.4);
+      });
       return () => {
         section.classList.remove('process--pinned');
         gsap.killTweensOf([...photos, ...imgs, ...texts]);

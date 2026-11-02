@@ -88,7 +88,7 @@ picture { display: block; position: relative; }
 .loader__line { display: block; width: min(60vw, 280px); height: 3px; background: var(--amber-500); transform-origin: left; }
 
 /* Nav */
-.nav { position: fixed; inset: 0 0 auto; z-index: 50; color: var(--paper); border-bottom: 1px solid transparent; background: linear-gradient(180deg, rgb(7 20 31 / 0.55), transparent); transition: background-color var(--dur-base) ease, border-color var(--dur-base) ease, backdrop-filter var(--dur-base) ease; }
+.nav { position: fixed; inset: 0 0 auto; z-index: 50; color: var(--paper); background: linear-gradient(180deg, rgb(7 20 31 / 0.55), transparent); transition: background-color var(--dur-base) ease, backdrop-filter var(--dur-base) ease; }
 .nav--solid { background: rgb(11 31 51 / 0.82); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .nav--solid { background: var(--ink-900); } }
 .nav__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 72px; }
@@ -112,8 +112,6 @@ picture { display: block; position: relative; }
 .nav__toggle-close { opacity: 0; transform: rotate(-45deg) scale(0.9); }
 .nav__toggle[aria-expanded="true"] .nav__toggle-open { opacity: 0; transform: rotate(45deg) scale(0.9); }
 .nav__toggle[aria-expanded="true"] .nav__toggle-close { opacity: 1; transform: none; }
-.nav__progress { height: 2px; }
-.nav__progress span { display: block; height: 100%; background: var(--amber-500); transform: scaleX(0); transform-origin: left; }
 @media (min-width: 900px) {
   .nav__bar { display: grid; grid-template-columns: 1fr auto 1fr; }
   .nav__bar .logo { justify-self: start; }
