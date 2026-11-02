@@ -69,10 +69,10 @@ const word = [...'SECAOBRA'];
   <header class="nav" data-nav>
     <div class="nav__bar wrap">
       <a class="logo" href="#topo" aria-label={`${site.name} (${site.nameNote}), início`}>
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4.6 6.1 7.2 9.6 7.2 13.3a7.2 7.2 0 0 1-14.4 0C8.8 13.6 11.4 10.1 16 4z" fill="currentColor"/></svg>
+        <span class="logo__badge"><svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4.6 6.1 7.2 9.6 7.2 13.3a7.2 7.2 0 0 1-14.4 0C8.8 13.6 11.4 10.1 16 4z" fill="currentColor"/></svg></span>
         <span>{site.name}</span>
       </a>
-      <nav class="nav__links" aria-label="Principal">
+      <nav class="nav__links" aria-label="Principal" data-nav-links>
         {links.map((l) => <a href={l.href}>{l.label}</a>)}
       </nav>
       <a class="btn btn--primary btn--sm nav__cta" href={wa()} target="_blank" rel="noopener">
@@ -131,7 +131,7 @@ const word = [...'SECAOBRA'];
           <p class="lead" data-reveal>Lista de exemplo; os serviços finais serão confirmados pela empresa. Escolha um serviço para pedir orçamento já com o assunto no WhatsApp.</p>
         </header>
         <div class="services__grid">
-          <article class="svc svc--feature" data-reveal data-cursor="Orçar">
+          <article class="svc svc--feature" data-reveal>
             <div class="svc__photo frame" data-parallax><Picture name={featured.photo} sizes="(min-width: 900px) 45vw, 100vw" sample /></div>
             <div class="svc__body">
               <span class="svc__n">{featured.n}</span>
@@ -143,7 +143,7 @@ const word = [...'SECAOBRA'];
           </article>
           <ul class="svc-list" role="list">
             {others.map((s) => (
-              <li class="svc svc--row" data-reveal data-cursor="Orçar">
+              <li class="svc svc--row" data-reveal>
                 <div class="svc__thumb frame"><Picture name={s.photo} sizes="(min-width: 900px) 160px, 112px" /></div>
                 <div class="svc__body">
                   <span class="svc__n">{s.n}</span>
@@ -241,8 +241,33 @@ const word = [...'SECAOBRA'];
 
   <footer class="footer">
     <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo" href="#topo" aria-label="Voltar ao topo">
+            <span class="logo__badge"><svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4.6 6.1 7.2 9.6 7.2 13.3a7.2 7.2 0 0 1-14.4 0C8.8 13.6 11.4 10.1 16 4z" fill="currentColor"/></svg></span>
+            <span>{site.name}</span>
+          </a>
+          <p>Impermeabilização para obras e imóveis. Conte o problema, enviamos a resposta pelo WhatsApp.</p>
+        </div>
+        <nav class="footer__col" aria-label="Rodapé: navegação">
+          <h2 class="footer__title">Navegar</h2>
+          <ul role="list">
+            {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </nav>
+        <div class="footer__col">
+          <h2 class="footer__title">Contato</h2>
+          <ul role="list">
+            <li><a href={wa()} target="_blank" rel="noopener">WhatsApp</a></li>
+            {site.socials.map((s) => <li><a href={s.href} target="_blank" rel="noopener">{s.label}</a></li>)}
+          </ul>
+        </div>
+      </div>
       <p class="footer__word" aria-hidden="true">{site.name}</p>
-      <p class="footer__note">{site.name} é uma empresa fictícia: projeto de portfólio. Nome, número de WhatsApp, redes sociais, serviços e textos são exemplos. Fotos reais de banco de imagens (Pexels), marcadas como exemplo.</p>
+      <div class="footer__bottom">
+        <p class="footer__note">{site.name} é uma empresa fictícia: projeto de portfólio. Nome, número de WhatsApp, redes sociais, serviços e textos são exemplos. Fotos reais de banco de imagens (Pexels), marcadas como exemplo.</p>
+        <p class="footer__credit">Feito por <strong>Eduardo Sousa</strong></p>
+      </div>
     </div>
   </footer>
 

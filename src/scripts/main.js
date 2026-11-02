@@ -134,6 +134,19 @@ function setupNav() {
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   matchMedia('(min-width: 900px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
+  // Highlight the header link for the section crossing the upper part of the viewport.
+  const spy = $$('[data-nav-links] a').map((a) => ({ a, sec: $(a.getAttribute('href')) })).filter((x) => x.sec);
+  if (spy.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        spy.forEach(({ a, sec }) => (sec === en.target ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+      });
+      if (scrollY < 200) spy.forEach(({ a }) => a.removeAttribute('aria-current'));
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    spy.forEach(({ sec }) => io.observe(sec));
+  }
+
   // Floating WhatsApp button steps aside when the contact section (with its own CTA) is on screen.
   const contact = $('[data-contact]');
   if (fab && contact && 'IntersectionObserver' in window) {
@@ -232,44 +245,16 @@ function setupMotion() {
     $('[data-fab]')?.classList.add('is-ready');
   });
 
-  // Desktop pointer extras: smooth scroll and cursor
+  // Desktop pointer extras: smooth scroll
   mm.add('(min-width: 900px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
-    const lenis = new Lenis({ lerp: 0.1, anchors: { offset: -72 } });
+    const lenis = new Lenis({ lerp: 0.1, anchors: { offset: -80 } });
     lenis.on('scroll', ScrollTrigger.update);
     const tick = (t) => lenis.raf(t * 1000);
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
-
-    const dot = document.createElement('div');
-    dot.className = 'cursor';
-    dot.setAttribute('aria-hidden', 'true');
-    dot.innerHTML = '<span></span>';
-    document.body.append(dot);
-    const label = $('span', dot);
-    gsap.set(dot, { opacity: 0 });
-    const x = gsap.quickTo(dot, 'x', { duration: 0.35, ease: 'power3.out' });
-    const y = gsap.quickTo(dot, 'y', { duration: 0.35, ease: 'power3.out' });
-    const move = (e) => { gsap.to(dot, { opacity: 1, duration: 0.2, overwrite: 'auto' }); x(e.clientX); y(e.clientY); };
-    const over = (e) => {
-      const t = e.target.closest?.('[data-cursor]');
-      if (t) {
-        label.textContent = t.dataset.cursor;
-        gsap.to(dot, { width: 72, height: 72, marginLeft: -36, marginTop: -36, duration: 0.3, ease: 'power3.out' });
-        gsap.to(label, { opacity: 1, duration: 0.2 });
-      } else {
-        gsap.to(dot, { width: 10, height: 10, marginLeft: -5, marginTop: -5, duration: 0.25, ease: 'power3.out' });
-        gsap.to(label, { opacity: 0, duration: 0.1 });
-      }
-    };
-    addEventListener('pointermove', move);
-    addEventListener('pointerover', over);
-    document.addEventListener('mouseleave', () => gsap.to(dot, { opacity: 0, duration: 0.2 }));
     return () => {
       lenis.destroy();
       gsap.ticker.remove(tick);
-      removeEventListener('pointermove', move);
-      removeEventListener('pointerover', over);
-      dot.remove();
     };
   });
 
