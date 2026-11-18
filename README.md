@@ -5,10 +5,12 @@
 **A bold, cinematic landing page for a waterproofing company.**
 Built to turn visitors into WhatsApp quote requests.
 
+[![Live demo](https://img.shields.io/badge/Live_demo-waterproofing--delta.vercel.app-111?style=for-the-badge&logo=vercel&logoColor=white)](https://waterproofing-delta.vercel.app)
+
 ![Astro](https://img.shields.io/badge/Astro_7-BC52EE?style=flat-square&logo=astro&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black)
 ![CSS](https://img.shields.io/badge/Plain_CSS-1572B6?style=flat-square&logo=css3&logoColor=white)
-![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel&logoColor=white)
 
 <img src="public/og.jpg" alt="Preview of the Seca Obra landing page." width="820">
 
@@ -37,7 +39,7 @@ Built to turn visitors into WhatsApp quote requests.
 | Fonts | Schibsted Grotesk + Instrument Serif (Fontsource) |
 | Icons | lucide-static |
 | Images | `sharp` pipeline (`photos:fetch`, `photos:build`) |
-| Hosting | Cloudflare Pages |
+| Hosting | Vercel |
 
 ## Getting started
 
